@@ -1,7 +1,17 @@
-
+/*
+*/
 public class MergeTwoSortedLists {
-
-	public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+	
+	 private class ListNode{
+		int key;
+		ListNode next;
+		
+		ListNode(int key){
+			this.key = key;
+			next= null;
+		}
+	}
+	 public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
 	      
 	      if(l1 == null) return l2;
 	      if(l2 == null) return l1;
@@ -11,7 +21,7 @@ public class MergeTwoSortedLists {
 	      ListNode firstHead = first;
 	      
 	      while(l1 != null && l2 != null){
-	        if(l1.val <= l2.val ){
+	        if(l1.key <= l2.key ){
 	          firstHead.next = l1;
 	          l1= l1.next;
 	          
@@ -29,3 +39,6 @@ public class MergeTwoSortedLists {
 	      
 	      return first.next;
 }
+}
+
+	
